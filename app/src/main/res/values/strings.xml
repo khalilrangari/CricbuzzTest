@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">KhalilCricbuzzTest</string>
+  <string name="searchHint">Search Restaurant, Food, Cuisine Type…</string>
+</resources>

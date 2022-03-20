@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:layout_margin="@dimen/sixteen_dp"
+ app:cardCornerRadius="@dimen/ten_dp"
+ app:cardElevation="@dimen/five_dp">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:layout_marginTop="@dimen/ten_dp"
+   android:layout_marginEnd="@dimen/ten_dp"
+   android:layout_marginBottom="@dimen/ten_dp">
+
+    <androidx.constraintlayout.widget.Guideline
+     android:id="@+id/glImgStart"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     app:layout_constraintGuide_percent=".05" />
+
+    <androidx.constraintlayout.widget.Guideline
+     android:id="@+id/glImgEnd"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     app:layout_constraintGuide_percent=".30" />
+
+    <androidx.cardview.widget.CardView
+     android:id="@+id/cvFood"
+     android:layout_width="@dimen/zero_dp"
+     android:layout_height="@dimen/eighty_dp"
+     android:layout_gravity="center"
+     app:cardCornerRadius="@dimen/ten_dp"
+     app:cardElevation="0dp"
+     app:cardUseCompatPadding="true"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintEnd_toStartOf="@+id/glImgEnd"
+     app:layout_constraintStart_toEndOf="@+id/glImgStart"
+     app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.appcompat.widget.AppCompatImageView
+       android:id="@+id/ivFood"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:scaleType="fitXY"
+       android:src="@drawable/pizza" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Group
+     android:layout_width="@dimen/zero_dp"
+     android:layout_height="@dimen/zero_dp"
+     app:constraint_referenced_ids="tvRestaurantName,tvRestaurantAddress,tvRestaurantCuisineType"
+     app:layout_constraintBottom_toBottomOf="@+id/cvFood"
+     app:layout_constraintTop_toTopOf="@+id/cvFood" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+     android:id="@+id/tvRestaurantName"
+     style="@style/HeadingText"
+     android:layout_width="@dimen/zero_dp"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/ten_dp"
+     android:ellipsize="end"
+     android:singleLine="true"
+     android:text="Name"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toEndOf="@+id/glImgEnd"
+     app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+     android:id="@+id/tvRestaurantAddress"
+     style="@style/NormalText"
+     android:layout_width="@dimen/zero_dp"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/ten_dp"
+     android:clipToOutline="true"
+     android:ellipsize="end"
+     android:singleLine="true"
+     android:text="address"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toEndOf="@+id/glImgEnd"
+     app:layout_constraintTop_toBottomOf="@+id/tvRestaurantName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+     android:id="@+id/tvRestaurantCuisineType"
+     style="@style/NormalText"
+     android:layout_width="@dimen/zero_dp"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/ten_dp"
+     android:ellipsize="end"
+     android:singleLine="true"
+     android:text="cuisine_type"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toEndOf="@+id/glImgEnd"
+     app:layout_constraintTop_toBottomOf="@+id/tvRestaurantAddress" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

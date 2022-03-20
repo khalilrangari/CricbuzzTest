@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.android.khalilcricbuzztest"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    //view binding
+    buildFeatures {
+        viewBinding true
+    }
+    //data binding
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.6.0-alpha03'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //Gson convter
+    implementation 'com.google.code.gson:gson:2.9.0'
+    // RecyclerView
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    //viewmodel
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "android.arch.lifecycle:viewmodel:1.1.1"
+    //Cardview
+    implementation "androidx.cardview:cardview:1.0.0"
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+}
